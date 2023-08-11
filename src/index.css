@@ -9,8 +9,7 @@
     font-weight: 400;
     font-size: 16px;
     background-color: hsl(0, 0%, 100%);
-    width: 100vw;
-    height: 100vh;
+
     --color-primary-orange: hsl(26, 100%, 55%);
     --color-primary-pale-orange: hsl(25, 100%, 94%);
     --color-neutral-veryDark-blue: hsl(220, 13%, 13%);
