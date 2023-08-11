@@ -2,4 +2,11 @@
     display: flex;
     width: 100vw;
     height: 100vh;
+    flex-direction: column;
+}
+
+@media (max-width: 901px) {
+    .container {
+        align-items: center;
+    }
 }
