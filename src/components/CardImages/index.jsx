@@ -1,14 +1,10 @@
 import "./style.css";
 import { useMediaQuery } from "react-responsive";
-
-import product from "../../mock/product.json";
+import { images, next, previous } from "../../mock/product.json";
 import { useState } from "react";
 
 export const CardImages = () => {
-    const cardImagesMobile = product.imagesDesktop;
     const [imgIndex, setImgIndex] = useState(0);
-    const next = product.next;
-    const previous = product.previous;
 
     const Desktop = ({ children }) => {
         const isDesktop = useMediaQuery({ minWidth: 902 });
@@ -21,25 +17,16 @@ export const CardImages = () => {
     };
 
     const handleProductImgNext = () => {
-        if (imgIndex >= 0 || imgIndex < 3) {
-            setImgIndex(imgIndex + 1);
-        }
-        if (imgIndex === 3) {
-            setImgIndex(0);
-        }
+        setImgIndex((imgIndex + 1) % images.length);
     };
 
     const handleProductImgPrevious = () => {
-        if (imgIndex === 3 || imgIndex > 0) {
-            setImgIndex(imgIndex - 1);
-        }
-        if (imgIndex === 0) {
-            setImgIndex(3);
-        }
+        setImgIndex((imgIndex - 1 + images.length) % images.length);
     };
 
     return (
         <div className="container-card-images">
+            {console.log(images.length)}
             <Mobile>
                 <div className="card-steps">
                     <span
@@ -54,7 +41,12 @@ export const CardImages = () => {
                 </div>
                 <img
                     className="img-product-mobile"
-                    src={cardImagesMobile[imgIndex].image}
+                    style={
+                        imgIndex === 0
+                            ? { objectPosition: "center" }
+                            : { objectPosition: "top" }
+                    }
+                    src={images[imgIndex].image}
                     alt=""
                 />
             </Mobile>

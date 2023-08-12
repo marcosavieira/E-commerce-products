@@ -8,7 +8,7 @@
     "next": "../../src/assets/icon-next.svg",
     "previous": "../../src/assets/icon-previous.svg",
 
-    "imagesDesktop": [
+    "images": [
         {
             "id": 1,
             "image": "../../src/assets/image-product-1.jpg"
@@ -24,24 +24,6 @@
         {
             "id": 4,
             "image": "../../src/assets/image-product-4.jpg"
-        }
-    ],
-    "imagesMobile": [
-        {
-            "id": 5,
-            "imageMobilePrincipal": "../../src/assets/image-product-1-thumbnail.jpg"
-        },
-        {
-            "id": 6,
-            "imageMobile1": "../../src/assets/image-product-2-thumbnail.jpg"
-        },
-        {
-            "id": 7,
-            "imageMobile2": "../../src/assets/image-product-3-thumbnail.jpg"
-        },
-        {
-            "id": 8,
-            "imageMobile3": "../../src/assets/image-product-4-thumbnail.jpg"
         }
     ]
 }

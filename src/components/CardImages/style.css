@@ -1,7 +1,7 @@
 @media (max-width: 991px) {
     .container-card-images {
         width: 100%;
-        height: 37%;
+        height: 35%;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -39,5 +39,6 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        max-width: 408px;
     }
 }
