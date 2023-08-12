@@ -1,0 +1,105 @@
+@media (max-width: 901px) {
+    .card-details {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin-top: 1rem;
+        gap: 1rem;
+        height: 53%;
+    }
+
+    .card-details strong {
+        color: var(--color-primary-orange);
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+    .card-details h1,
+    #price-atual {
+        color: var(--color-neutral-veryDark-blue);
+        font-size: 28px;
+    }
+    .card-details p {
+        color: var(--color-neutral-darkGrayish-blue);
+        font-size: 16px;
+    }
+    .card-product-pricing {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 96%;
+        height: 15%;
+    }
+
+    .product-pricing-desc {
+        display: flex;
+        width: 50%;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .card-desc {
+        background: var(--color-primary-pale-orange);
+        width: 30%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #desc {
+        color: var(--color-primary-orange);
+        font-size: 17px;
+    }
+
+    #price {
+        color: var(--color-neutral-darkGrayish-blue);
+        text-decoration: line-through;
+    }
+    .card-buttons {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        gap: 1rem;
+    }
+
+    .card-buttons button {
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .button-add {
+        background: var(--color-neutral-lightGrayish-blue);
+        height: 35%;
+        border: none;
+        background: color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 8rem;
+    }
+
+    #count {
+        color: var(--color-neutral-veryDark-blue);
+        font-size: 14px;
+    }
+
+    .button-cart {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        background: var(--color-primary-orange);
+        width: 100%;
+        height: 35%;
+        box-shadow: 20px 25px 20px var(--color-primary-pale-orange);
+        gap: 1rem;
+    }
+
+    .button-cart img {
+        fill: var(--color-primary-pale-orange) !important;
+    }
+    #text-button-cart {
+        color: var(--color-primary-pale-orange) !important;
+    }
+}
