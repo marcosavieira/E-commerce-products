@@ -10,8 +10,16 @@ import {
 import cart from "../../assets/icon-cart-button.svg";
 import plus from "../../assets/icon-plus.svg";
 import minus from "../../assets/icon-minus.svg";
+import { useState } from "react";
 
 export const CardDetails = () => {
+    const [count, setCount] = useState(0);
+    const handleAddProduct = () => {
+        setCount(count + 1);
+    };
+    const handleRemoveProduct = () => {
+        count > 0 && setCount(count - 1);
+    };
     return (
         <div className="card-details">
             <strong>{company.toLocaleUpperCase()}</strong>
@@ -30,9 +38,17 @@ export const CardDetails = () => {
             </div>
             <div className="card-buttons">
                 <button className="button-add">
-                    <img src={plus} alt="" />
-                    <strong id="count">0</strong>
-                    <img src={minus} alt="" />
+                    <span
+                        className="container-add"
+                        onClick={handleRemoveProduct}
+                    >
+                        <img src={minus} alt="" />
+                    </span>
+
+                    <strong id="count">{count}</strong>
+                    <span className="container-add" onClick={handleAddProduct}>
+                        <img src={plus} alt="" />
+                    </span>
                 </button>
                 <button className="button-cart">
                     <img src={cart} alt="" />
