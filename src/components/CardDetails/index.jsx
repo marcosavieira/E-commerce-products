@@ -7,21 +7,34 @@ import {
     price,
     priceAtual,
 } from "../../mock/product.json";
-import cart from "../../assets/icon-cart-button.svg";
+import cartIcon from "../../assets/icon-cart-button.svg";
 import plus from "../../assets/icon-plus.svg";
 import minus from "../../assets/icon-minus.svg";
-import { useState } from "react";
+import {
+    decrement,
+    increment,
+    resetValue,
+} from "../../features/counter/counterSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../../features/cart/cartSlice";
 
 export const CardDetails = () => {
-    const [count, setCount] = useState(0);
-    const handleAddProduct = () => {
-        setCount(count + 1);
-    };
+    const count = useSelector((state) => state.counter.value);
+
+    const dispatch = useDispatch();
+
     const handleRemoveProduct = () => {
-        count > 0 && setCount(count - 1);
+        count > 0 && dispatch(decrement());
     };
+
+    const handleCart = () => {
+        dispatch(addToCart(count));
+        dispatch(resetValue(0));
+    };
+
     return (
         <div className="card-details">
+            {console.log(count)}
             <strong>{company.toLocaleUpperCase()}</strong>
             <h1>{name}</h1>
             <p>{description}</p>
@@ -46,12 +59,15 @@ export const CardDetails = () => {
                     </span>
 
                     <strong id="count">{count}</strong>
-                    <span className="container-add" onClick={handleAddProduct}>
+                    <span
+                        className="container-add"
+                        onClick={() => dispatch(increment())}
+                    >
                         <img src={plus} alt="" />
                     </span>
                 </button>
-                <button className="button-cart">
-                    <img src={cart} alt="" />
+                <button className="button-cart" onClick={handleCart}>
+                    <img src={cartIcon} alt="" />
 
                     <strong id="text-button-cart">Add to cart</strong>
                 </button>
