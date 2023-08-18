@@ -12,6 +12,7 @@
         justify-content: space-between;
         width: 90%;
         position: absolute;
+        max-width: 380px;
     }
 
     .card-next,

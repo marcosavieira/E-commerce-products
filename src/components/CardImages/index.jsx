@@ -1,20 +1,13 @@
 import "./style.css";
-import { useMediaQuery } from "react-responsive";
 import { images, next, previous } from "../../mock/product.json";
 import { useState } from "react";
+import { Desktop, Mobile } from "../../hooks/responsive";
+import { ModalCart } from "../../modals/ModalCart";
+import { useSelector } from "react-redux";
 
 export const CardImages = () => {
+    const modal = useSelector((state) => state);
     const [imgIndex, setImgIndex] = useState(0);
-
-    const Desktop = ({ children }) => {
-        const isDesktop = useMediaQuery({ minWidth: 902 });
-        return isDesktop ? children : null;
-    };
-
-    const Mobile = ({ children }) => {
-        const isMobile = useMediaQuery({ maxWidth: 901 });
-        return isMobile ? children : null;
-    };
 
     const handleProductImgNext = () => {
         setImgIndex((imgIndex + 1) % images.length);
@@ -26,8 +19,8 @@ export const CardImages = () => {
 
     return (
         <div className="container-card-images">
-            {console.log(images.length)}
             <Mobile>
+                {console.log(modal)}
                 <div className="card-steps">
                     <span
                         className="card-previous"
@@ -39,6 +32,7 @@ export const CardImages = () => {
                         <img src={next} />
                     </span>
                 </div>
+                <div>{modal && <ModalCart />}</div>
                 <img
                     className="img-product-mobile"
                     style={
