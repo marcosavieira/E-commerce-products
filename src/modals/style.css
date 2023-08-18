@@ -1,0 +1,8 @@
+@media (max-width: 901px) {
+    .container-modal {
+        width: 90%;
+        height: 80%;
+        position: absolute;
+        z-index: 99;
+    }
+}

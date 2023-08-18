@@ -16,7 +16,7 @@ import {
     resetValue,
 } from "../../features/counter/counterSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../../features/cart/cartSlice";
+import { addToCart, addPrice, addTitle } from "../../features/cart/cartSlice";
 
 export const CardDetails = () => {
     const count = useSelector((state) => state.counter.value);
@@ -29,6 +29,8 @@ export const CardDetails = () => {
 
     const handleCart = () => {
         dispatch(addToCart(count));
+        dispatch(addPrice(priceAtual));
+        dispatch(addTitle(name));
         dispatch(resetValue(0));
     };
 
